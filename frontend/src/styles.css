@@ -1,0 +1,304 @@
+/* ==========================================================================
+   KRONOS DESIGN SYSTEM — NEO-SKEUO UI KIT
+   Inspired by Neo-Skeuomorphism, Tactile Paper & Modern Productivity Workspaces
+   ========================================================================== */
+
+:root {
+  /* Canvas & Surfaces */
+  --bg-canvas: #F6F3EA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-warm: #FAF7F0;
+  --bg-inset: #EDE9DE;
+  --bg-sidebar: #121316;
+  --bg-sidebar-hover: #222328;
+  --bg-sidebar-active: #2C2D35;
+
+  /* Ink & Text */
+  --ink-primary: #18191B;
+  --ink-secondary: #575961;
+  --ink-muted: #8E9099;
+  --ink-inverse: #FBF9F4;
+  --ink-inverse-muted: #9E9FA8;
+
+  /* Borders & Depth */
+  --border-dark: #1E1F24;
+  --border-subtle: #DDD7CA;
+  --border-faint: #E8E3D7;
+  --border-sidebar: #28292E;
+
+  /* Tactile Shadows (Neo-Skeuomorphism) */
+  --shadow-level-1: 0 2px 0 var(--border-dark);
+  --shadow-level-2: 0 4px 0 var(--border-dark), 0 6px 12px rgba(24, 25, 27, 0.05);
+  --shadow-level-3: 0 8px 0 var(--border-dark), 0 16px 24px rgba(24, 25, 27, 0.08);
+  --shadow-soft: 0 8px 24px -4px rgba(24, 25, 27, 0.08);
+  --shadow-inset: inset 0 2px 4px rgba(24, 25, 27, 0.08);
+  --shadow-inset-deep: inset 0 3px 6px rgba(24, 25, 27, 0.12);
+
+  /* Color Categories (from Image 2) */
+  --cat-planning-bg: #FEF08A;
+  --cat-planning-border: #F59E0B;
+  --cat-planning-text: #78350F;
+
+  --cat-university-bg: #BFDBFE;
+  --cat-university-border: #3B82F6;
+  --cat-university-text: #1E3A8A;
+
+  --cat-urgent-bg: #FBCFE8;
+  --cat-urgent-border: #EC4899;
+  --cat-urgent-text: #831843;
+
+  --cat-personal-bg: #BBF7D0;
+  --cat-personal-border: #10B981;
+  --cat-personal-text: #064E3B;
+
+  --cat-neutral-bg: #F1EFEA;
+  --cat-neutral-border: #D1CDC4;
+  --cat-neutral-text: #292524;
+
+  --cat-ai-bg: #DDD6FE;
+  --cat-ai-border: #8B5CF6;
+  --cat-ai-text: #4C1D95;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', var(--font-sans);
+  --font-mono: 'Space Mono', monospace;
+
+  /* Radius Scale (Image 1) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  overflow-x: hidden;
+}
+
+/* Base Surfaces */
+.neo-surface {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+}
+
+.neo-raised {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-level-2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-raised-sm {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-level-1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-inset {
+  background-color: var(--bg-inset);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-inset);
+}
+
+/* Button Sets (Image 1 Controls) */
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: 1.5px solid var(--border-dark);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  text-decoration: none;
+}
+
+.neo-btn:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 0 0 var(--border-dark) !important;
+}
+
+.neo-btn-primary {
+  background-color: var(--border-dark);
+  color: var(--ink-inverse);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.neo-btn-primary:hover {
+  background-color: #2A2B32;
+}
+
+.neo-btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-level-1);
+}
+
+.neo-btn-secondary:hover {
+  background-color: var(--bg-surface-warm);
+}
+
+.neo-btn-accent {
+  background-color: var(--cat-planning-bg);
+  color: var(--cat-planning-text);
+  box-shadow: 0 3px 0 #D97706;
+}
+
+.neo-btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.neo-btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+}
+
+/* Input Fields (Image 1 Controls) */
+.neo-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.neo-input-group label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-secondary);
+}
+
+.neo-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-primary);
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-inset);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2), var(--shadow-inset);
+}
+
+/* Navigation Tabs (Image 1 & 2) */
+.neo-tabs-container {
+  display: inline-flex;
+  padding: 3px;
+  background-color: var(--bg-inset);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  gap: 4px;
+}
+
+.neo-tab-item {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.neo-tab-item.active {
+  background-color: var(--border-dark);
+  color: var(--ink-inverse);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Badges & Chips */
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Category card variants */
+.card-planning {
+  background-color: var(--cat-planning-bg);
+  border: 1.5px solid var(--border-dark);
+  color: var(--cat-planning-text);
+}
+
+.card-university {
+  background-color: var(--cat-university-bg);
+  border: 1.5px solid var(--border-dark);
+  color: var(--cat-university-text);
+}
+
+.card-urgent {
+  background-color: var(--cat-urgent-bg);
+  border: 1.5px solid var(--border-dark);
+  color: var(--cat-urgent-text);
+}
+
+.card-personal {
+  background-color: var(--cat-personal-bg);
+  border: 1.5px solid var(--border-dark);
+  color: var(--cat-personal-text);
+}
+
+.card-neutral {
+  background-color: var(--cat-neutral-bg);
+  border: 1.5px solid var(--border-dark);
+  color: var(--cat-neutral-text);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1CDC4;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B4AEA3;
+}

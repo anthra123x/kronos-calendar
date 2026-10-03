@@ -1,0 +1,21 @@
+<div class="kronos-app-layout">
+  <!-- Left Floating Dark Sidebar (Image 2) -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main View Area -->
+  <main class="kronos-main-content">
+    <app-header (openAddEventModal)="openModal()"></app-header>
+    
+    <div class="content-viewport">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Slide-over AI Copilot Drawer -->
+  <app-ai-drawer></app-ai-drawer>
+
+  <!-- Add Event / Task Modal -->
+  @if (showAddEventModal()) {
+    <app-event-modal (close)="closeModal()"></app-event-modal>
+  }
+</div>
