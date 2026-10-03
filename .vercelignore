@@ -1,0 +1,13 @@
+.git
+.github
+tests
+.phpunit.result.cache
+node_modules
+.claude
+.agents
+*.log
+vendor/
+storage/logs/*
+storage/framework/cache/*
+storage/framework/views/*
+storage/framework/sessions/*

@@ -1,0 +1,11 @@
+{
+    "Auth": true,
+    "Calendar": true,
+    "Notes": true,
+    "Tasks": true,
+    "Academics": true,
+    "Workspace": true,
+    "AiChat": true,
+    "Notifications": true,
+    "Core": true
+}

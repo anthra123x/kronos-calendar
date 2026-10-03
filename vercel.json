@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "outputDirectory": "public",
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(build|css|js|images|fonts|favicon.ico|robots.txt)(.*)",
+      "dest": "/public/$1$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_NAME": "Kronos",
+    "APP_CONFIG_CACHE": "/tmp/storage/framework/config.php",
+    "APP_EVENTS_CACHE": "/tmp/storage/framework/events.php",
+    "APP_PACKAGES_CACHE": "/tmp/storage/framework/packages.php",
+    "APP_ROUTES_CACHE": "/tmp/storage/framework/routes.php",
+    "APP_SERVICES_CACHE": "/tmp/storage/framework/services.php",
+    "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
+    "CACHE_STORE": "array",
+    "SESSION_DRIVER": "cookie",
+    "LOG_CHANNEL": "stderr",
+    "DB_CONNECTION": "pgsql",
+    "VERCEL": "1"
+  }
+}
